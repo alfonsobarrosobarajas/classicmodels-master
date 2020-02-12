@@ -5,10 +5,12 @@
  <meta charset="UTF-8">
  <title>Alumno</title>
 
-
- <scrip src="js/lib/jquery-3.4.1.min.css"></scrip>
  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+ <script src="js/lib/jquery-3.4.1.min.js"></script>
  <script src="js/lib/angular.min.js"></script>
+ <script src="js/lib/bootstrap.min.js"></script>
+ <script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
  <script src="js/app/alumno/alumnoApp.js"></script>
 
  <script>
@@ -23,8 +25,9 @@
 
 <div class="container">
 
- <h1>Customers</h1>
+ <h1>Alumnos</h1>
 
+ <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#saveModal" >Add</button>
  <table class="table table-striped">
 
   <thead class="thead-dark">
@@ -55,7 +58,6 @@
   </tbody>
  </table>
 
- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#saveModal" >Add</button>
 
 
  <div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
