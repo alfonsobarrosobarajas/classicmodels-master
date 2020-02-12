@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+ <meta charset="UTF-8">
+ <title>Alumno</title>
+
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+ <script src="js/lib/angular.min.js"></script>
+ <script src="js/app/alumno/alumnoApp.js"></script>
+
+</head>
+
+<body ng-app="alumnoModule" ng-controller="AlumnoController" ng-cloak>
+
+<div class="container">
+
+ <h1>Customers</h1>
+
+ <table class="table table-striped">
+
+  <thead class="thead-dark">
+  <th>ID</th>
+  <th>Amaterno</th>
+  <th>Apaterno</th>
+  <th>Matricula</th>
+  <th>Nombre</th>
+
+  </thead>
+
+  <tbody>
+
+  <tr ng-repeat="alumno  in alumnos">
+
+   <td>{{alumno.id}}</td>
+   <td>{{alumno.amaterno}}</td>
+   <td>{{alumno.apaterno}}</td>
+   <td>{{alumno.matricula}}</td>
+   <td>{{alumno.nombre}}</td>
+
+
+
+  </tr>
+
+  </tbody>
+ </table>
+
+
+
+ <button type="button" class="btn btn-primary">Primary</button>
+
+ <form>
+
+  <div class="form-group">
+   <label>Matrícula</label>
+   <input type="text" class="form-control" ng-model="alumno.matricula">
+  </div>
+
+  <div class="form-group">
+   <label>Nombre</label>
+   <input type="text" class="form-control" ng-model="alumno.nombre">
+  </div>
+
+  <div class="form-group">
+   <label>A. Paterno</label>
+   <input type="text" class="form-control" ng-model="alumno.apaterno">
+  </div>
+
+  <div class="form-group">
+   <label>A. Materno</label>
+   <input type="text" class="form-control" ng-model="alumno.amaterno">
+  </div>
+
+  <!-- Botón pa'enviar los datos -->
+  <button type="submit" ng-click="add(alumno)" class="btn btn-primary">Submit</button>
+
+ </form>
+
+</div>
+
+</body>
+</html>
