@@ -25,6 +25,7 @@
   <th>Apaterno</th>
   <th>Matricula</th>
   <th>Nombre</th>
+  <th>Opciones</th>
 
   </thead>
 
@@ -37,7 +38,9 @@
    <td>{{alumno.apaterno}}</td>
    <td>{{alumno.matricula}}</td>
    <td>{{alumno.nombre}}</td>
-
+   <td>
+     <button ng-click="delete(alumno)">Eliminar</button>
+   </td>
 
 
   </tr>

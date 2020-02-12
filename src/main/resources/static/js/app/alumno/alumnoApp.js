@@ -64,6 +64,18 @@ angular.module('alumnoModule', [])
           }
 
 
+
+        // Función pa'eliminar un registro
+        $scope.delete = (alumno) => {
+
+            const conf = $window.confirm('Está seguro de eleminar esta mono?' + alumno.nombre);
+
+            if(conf)
+                $http.delete('/alumno/delete/' + alumno.id, alumno);
+
+
+        };
+
         listAlumno();
 
 
