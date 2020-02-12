@@ -32,7 +32,7 @@ public class AlumnoRestController {
     public void save(@RequestBody Alumno alumno) throws Exception {
 
         try {
-            System.out.println("holamundo");
+
             alumnoServices.save(alumno);
         } catch (Exception e) {
             throw new Exception(Messages.CUSTOMER_SAVED_ERROR);
