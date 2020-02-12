@@ -5,9 +5,17 @@
  <meta charset="UTF-8">
  <title>Alumno</title>
 
+
+ <scrip src="js/lib/jquery-3.4.1.min.css"></scrip>
  <link rel="stylesheet" href="css/bootstrap.min.css">
  <script src="js/lib/angular.min.js"></script>
  <script src="js/app/alumno/alumnoApp.js"></script>
+
+ <script>
+  $('#saveModal').on('shown.bs.modal', function () {
+   $('#myInput').trigger('focus')
+  })
+ </script>
 
 </head>
 
@@ -42,42 +50,60 @@
      <button ng-click="delete(alumno)">Eliminar</button>
    </td>
 
-
   </tr>
 
   </tbody>
  </table>
 
+ <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#saveModal" >Add</button>
 
 
- <button type="button" class="btn btn-primary">Primary</button>
+ <div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+   <div class="modal-content">
+    <div class="modal-header">
+     <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+     </button>
+    </div>
+    <div class="modal-body">
 
- <form>
+     <form>
 
-  <div class="form-group">
-   <label>Matrícula</label>
-   <input type="text" class="form-control" ng-model="alumno.matricula">
+      <div class="form-group">
+       <label>Matrícula</label>
+       <input type="text" class="form-control" ng-model="alumno.matricula">
+      </div>
+
+      <div class="form-group">
+       <label>Nombre</label>
+       <input type="text" class="form-control" ng-model="alumno.nombre">
+      </div>
+
+      <div class="form-group">
+       <label>A. Paterno</label>
+       <input type="text" class="form-control" ng-model="alumno.apaterno">
+      </div>
+
+      <div class="form-group">
+       <label>A. Materno</label>
+       <input type="text" class="form-control" ng-model="alumno.amaterno">
+      </div>
+
+      <!-- Botón pa'enviar los datos -->
+      <button type="submit" ng-click="add(alumno)" class="btn btn-primary">Submit</button>
+
+     </form>
+    </div>
+    <div class="modal-footer">
+     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+     <button type="button" class="btn btn-primary">Send message</button>
+    </div>
+   </div>
   </div>
+ </div>
 
-  <div class="form-group">
-   <label>Nombre</label>
-   <input type="text" class="form-control" ng-model="alumno.nombre">
-  </div>
-
-  <div class="form-group">
-   <label>A. Paterno</label>
-   <input type="text" class="form-control" ng-model="alumno.apaterno">
-  </div>
-
-  <div class="form-group">
-   <label>A. Materno</label>
-   <input type="text" class="form-control" ng-model="alumno.amaterno">
-  </div>
-
-  <!-- Botón pa'enviar los datos -->
-  <button type="submit" ng-click="add(alumno)" class="btn btn-primary">Submit</button>
-
- </form>
 
 </div>
 
