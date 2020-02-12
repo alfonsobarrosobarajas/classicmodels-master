@@ -65,11 +65,11 @@ angular.module('alumnoModule', [])
 
         $scope.delete = (alumno) => {
 
-            const conf = $window.confirm('Está seguro de eleminar esta mono?' + alumno.nombre);
+            const conf = $window.confirm('Está seguro de eleminar este registro?' + alumno.nombre);
 
             if(conf){
 
-                $http.delete('/alumno/delete/' + alumno.id, alumno).then((response) => {
+                $http.delete('/alumno/delete/' + alumno.id).then((response) => {
 
                     listAlumno();
 

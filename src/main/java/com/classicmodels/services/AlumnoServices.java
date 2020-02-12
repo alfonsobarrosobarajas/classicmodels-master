@@ -33,11 +33,12 @@ public class AlumnoServices implements ICRUD<Alumno>{
 
     @Override
     public void update(Alumno obj, int id) throws Exception {
-
+        obj.setId(id);
+        alumnoRepository.save(obj);
     }
 
     @Override
     public void deleteById(int id) throws Exception {
-
+        alumnoRepository.deleteById(id);
     }
 }

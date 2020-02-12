@@ -27,6 +27,7 @@ public class AlumnoRestController {
         }
 
     }
+
     @PostMapping(UrlConstants.SAVE)
     public void save(@RequestBody Alumno alumno) throws Exception {
 
@@ -35,6 +36,26 @@ public class AlumnoRestController {
             alumnoServices.save(alumno);
         } catch (Exception e) {
             throw new Exception(Messages.CUSTOMER_SAVED_ERROR);
+        }
+    }
+
+
+    @PutMapping(UrlConstants.UPDATE)
+    public void update(@RequestBody Alumno alumno, int id){
+        try {
+            alumnoServices.update(alumno, id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @DeleteMapping(UrlConstants.DELETE_BY_ID)
+    public void delete(@PathVariable int id){
+        try {
+            alumnoServices.deleteById(id);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
